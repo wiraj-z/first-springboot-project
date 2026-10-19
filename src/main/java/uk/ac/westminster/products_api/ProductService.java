@@ -10,6 +10,11 @@ public class ProductService {
     private List<Product> products = new ArrayList<>();
     private Long nextId = 1L;
 
+    public ProductService(){
+        products.add(new DigitalProduct(nextId++,"NFT",15.00,"downloads/nft",5.1));
+        products.add(new PhysicalProduct(nextId++,"Mobile phone",999.0,"16*5",0.25));
+    }
+
     public List<Product> getAllProducts() {
         return products;
     }
