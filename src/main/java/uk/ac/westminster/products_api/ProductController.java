@@ -24,7 +24,7 @@ public class ProductController {
     }
 
     @PostMapping()
-    public Product addProduct(@RequestBody Product product){
+    public Product addProduct(@RequestBody DigitalProduct product){ //this is a temporary fix
         return productService.addProduct(product);
     }
 
@@ -36,5 +36,10 @@ public class ProductController {
     @GetMapping("/search")
     public List<Product> search(@RequestParam String name){
         return productService.findByName(name);
+    }
+
+    @GetMapping("/summaries")
+    public List<String> getSummaries(){
+        return productService.getAllSummaries();
     }
 }
